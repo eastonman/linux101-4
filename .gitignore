@@ -1,0 +1,5 @@
+# LaTex Build
+*.nav
+*.pdf
+*.snm
+*.vrb

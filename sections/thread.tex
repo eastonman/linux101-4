@@ -1,0 +1,38 @@
+\section{Thread}
+
+\begin{frame}
+    \frametitle{What? Thread?}
+    Why do we need threads?
+    \begin{enumerate}
+        \item Single-core performance increase slow down
+        \item Multi-core CPU coming into the market
+    \end{enumerate}
+
+    What is a thread? What is a thread different from a process?
+
+    Memory Addressing Space (No isolation)
+    \begin{enumerate}
+        \item Fast context switching
+        \item Low creation cost
+    \end{enumerate}
+
+    \vspace{2em}
+
+    \begin{alertblock}{Remark}
+        Thread switching can be done in user space
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Using Thread}
+    pthread library
+\end{frame}
+
+\begin{frame}
+    \frametitle{Creating Thread Library}
+    A thread context switch is like a function calling on the same CPU.
+
+    Why can't we create our own threading library?
+\end{frame}
+

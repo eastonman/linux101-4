@@ -1,0 +1,35 @@
+\section{Linux System Components}
+
+\begin{frame}
+    \frametitle{Init \& Systemd}
+
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Using Systemd}
+
+    \begin{lstlisting}
+        [Unit]
+        Description=Jupyter Notebook 
+        [Service]
+        PIDFile=/run/jupyter.pid 
+        ExecStart=/usr/local/bin/jupyter-notebook --allow-root User=root
+        Group=root
+        WorkingDirectory=/root
+        Restart=always
+        RestartSec=10
+        [Install]
+        WantedBy=multi-user.target
+    \end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Cronjob \& Crontab}
+
+
+
+\end{frame}

@@ -1,0 +1,56 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Theme
+\usetheme{Madrid}
+
+% Section Page
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+
+% Template
+\input{template/color.tex}
+\input{template/lst_style.tex}
+
+
+%Information to be included in the title page:
+\title{HITSZ LUG Ta1k 0x04}
+\subtitle{Process, Signal, Daemon and Cronjob}
+\author{Easton Man}
+\institute[HITSZ]{Harbin Institute of Technology \(ShenZhen\)} 
+\date{\today}
+\logo{
+    \includegraphics[height=1cm]{asset/penguin.png}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+
+% Sections
+\input{sections/process.tex}
+\input{sections/thread.tex}
+\input{sections/IPC.tex}
+\input{sections/daemon.tex}
+\input{sections/linux.tex}
+
+
+
+
+\end{document}
