@@ -37,7 +37,15 @@
     \end{enumerate}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Using Process}
     UNIX magic: fork()
+    \begin{lstlisting}
+pid_t pid = fork();
+if (pid == 0) {
+    printf("I am a child process\n");
+} else {
+    printf("I am a parent process\n");
+}
+    \end{lstlisting}
 \end{frame}
