@@ -3,3 +3,6 @@
 *.pdf
 *.snm
 *.vrb
+
+# Compiler output
+**/main
