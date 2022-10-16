@@ -3,6 +3,9 @@
 \begin{frame}
     \frametitle{Init \& Systemd}
 
+    Systemd is a suite of basic building blocks for a Linux system.
+
+    It provides a system and service manager that runs as PID 1 and starts the rest of the system.
 
 
 \end{frame}
@@ -10,14 +13,16 @@
 \begin{frame}[fragile]
     \frametitle{Using Systemd}
 
+    Systemd service config
+
+    \vspace{2em}
+
     \begin{lstlisting}
         [Unit]
-        Description=Jupyter Notebook 
+        Description=<whatever>
         [Service]
-        PIDFile=/run/jupyter.pid 
-        ExecStart=/usr/local/bin/jupyter-notebook --allow-root User=root
+        ExecStart=<executable file path>
         Group=root
-        WorkingDirectory=/root
         Restart=always
         RestartSec=10
         [Install]
@@ -30,6 +35,36 @@
 \begin{frame}
     \frametitle{Cronjob \& Crontab}
 
+    Why do we need Cronjob?
 
+    \vspace{2em}
+
+    \begin{enumerate}
+        \item Background maintenance (Backup, Cleanup, Update, etc.)
+        \item Scheduled work
+    \end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Crontab Syntax}
+
+    \begin{lstlisting}
+        # .---------------- minute (0 - 59)
+        # |  .------------- hour (0 - 23)
+        # |  |  .---------- day of month (1 - 31)
+        # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+        # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) 
+        # |  |  |  |  |
+        # *  *  *  *  * user-name command to be executed
+        17   *  *  *  *   root    cd / && run-parts --report /etc/cron.hourly
+        25   6  *  *  *   root    test -x /usr/sbin/anacron 
+        47   6  *  *  7   root    test -x /usr/sbin/anacron 
+        52   6  1  *  *   root    test -x /usr/sbin/anacron 
+    \end{lstlisting}
+
+    https://crontab.guru/
 
 \end{frame}

@@ -24,8 +24,18 @@
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Using Thread}
     pthread library
+
+    \vspace{2em}
+
+    \begin{lstlisting}
+pthread_t pid;
+
+pthread_create(&pid, NULL, T1, NULL);
+
+pthread_join(pid, NULL);
+    \end{lstlisting}
 \end{frame}
 
